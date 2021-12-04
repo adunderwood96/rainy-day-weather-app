@@ -1,24 +1,41 @@
 body {
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  font-family: "News Cycle", sans-serif;
 }
 
-.btn btn-primary {
-  background-image: linear-gradient(to right,#77a1d3 0%,#79cbca 51%,#77a1d3 100%);
-  margin: 10px;
-  padding: 15px 45px;
+header {
+  background-image: linear-gradient(
+    to top,
+    #a7a6cb 0%,
+    #8989ba 52%,
+    #8989ba 100%
+  );
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    #1d2b64 0%,
+    #f8cdda 51%,
+    #1d2b64 100%
+  );
+}
+.btn {
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
+  border: none;
 }
 
-.btn btn-primary :hover {
+.btn:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
+aside {
+    background-color: #a7a6cb;
+}
