@@ -12,25 +12,36 @@
 </head>
 
 <body>
-    <header class="jumbotron text-center bg-dark text-white">
+    <header class="header text-center bg-dark text-white p-1">
         <h1>Just Another Rainy Day: Weather Dashboard</h1>
     </header>
 
     <main class="container-fluid">
         <!-- City Search Div -->
-        <div class="row">
+        <div class="row my-2 p-1">
             <aside class="col-md-3 bg-transparent">
                 <h3>Search for a City:</h3>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="search" placeholder="ex. New York">
-                    <button class="btn btn-primary" id="search-button">🔍</button>
+                    <input type="text" class="form-control" id="search" placeholder="ex. Charlotte">
+                    <button class="btn btn-primary" id="search-button">Search</button>
                 </div>
                 <!-- Show Past City Searches -->
                 <ul class="list-group history" id="history"></ul>
             </aside>
 
+        <!-- Forecast Section current/5-day -->
+        <div class="col-md-9">
+            <h3 class="invisible" id="current-header">Today's Forecast:</h3>
+            <div id="current"></div>
+            <h3 class="invisible" id="forecast-header">5-Day Forecast:</h3>
+            <div id="forecast" class="row">
+            </div>
+        </div>
         </div>
     </main>
+
+    <footer>
+    </footer>
 </body>
 
 </html>
