@@ -1,5 +1,6 @@
 body {
   font-family: "News Cycle", sans-serif;
+  background-color: #a7a6cb;
 }
 
 header {
@@ -37,5 +38,31 @@ header {
 }
 
 aside {
-    background-color: #a7a6cb;
+  background-color: #f8cdda;
+}
+
+#current-header {
+  background-color: #f8cdda;
+  opacity: 75%;
+}
+
+#forecast-header {
+  background-color: #f8cdda;
+  opacity: 75%;
+}
+
+.card {
+  background-color: #719cce;
+  margin-bottom: 10px;
+  opacity: 75%;
+}
+
+#current {
+    width: 20rem;
+    text-align: center; 
+}
+
+#forecast {
+    width: 20rem;
+    text-align: center;
 }
