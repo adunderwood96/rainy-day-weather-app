@@ -39,30 +39,35 @@ header {
 
 aside {
   background-color: #f8cdda;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.search-history {
+    opacity: 50%;
 }
 
 #current-header {
   background-color: #f8cdda;
-  opacity: 75%;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 #forecast-header {
   background-color: #f8cdda;
   opacity: 75%;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .card {
   background-color: #719cce;
   margin-bottom: 10px;
   opacity: 75%;
-}
-
-#current {
-    width: 20rem;
-    text-align: center; 
+  border-radius: 15px;
 }
 
 #forecast {
-    width: 20rem;
+    width: 15rem;
     text-align: center;
 }

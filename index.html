@@ -20,25 +20,25 @@
     <main class="container-fluid">
         <!-- City Search Div -->
         <div class="row">
-            <aside class="col-md-3 m-4 p-2 opacity-50">
-                <h3 class="my-2">Search for a City:</h3>
+            <aside class="col-md-3 m-4">
+                <h3 class="my-1">Search for a City:</h3>
                 <div class="input-group mb-2">
                     <input type="text" class="form-control" id="search" placeholder="ex. Charlotte">
-                    <button class="btn btn-primary" id="search-button">Search</button>
+                    <button class="btn btn-primary" id="searchBtn">Search</button>
                 </div>
                 <!-- Show Past City Searches -->
                 <h5> Search History:</h5>
-                <div class="history-box">
+                <div class="search-history">
                     <ul class="list-group history" id="history"></ul>
                 </div>
             </aside>
 
             <!-- Forecast Section current/5-day -->
             <div class="col-md-8">
-                <h3 class="current m-4 p-3" id="current-header">Today's Forecast:</h3>
+                <h4 class="current m-4 p-3" id="current-header">Today's Forecast:</h4>
                 <div id="current"></div>
-                <h3 class="forecast m-4 p-3" id="forecast-header">5-Day Forecast:</h3>
-                <div id="forecast"></div>
+                <h4 class="forecast m-4 p-3" id="forecast-header">5-Day Forecast:</h4>
+                <div class="row" id="forecast"></div>
             </div>
         </div>
     </main>
