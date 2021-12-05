@@ -71,3 +71,33 @@ function currentWeather(search) {
             var uvIndex = document.createElement('p');
             uvIndex.className = "card-text";
 
+            fetch(`http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${data.coord.lat}&lon=${data.coord.lon}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    uvIndex.textContent = "UV Index: " + data.value;
+                    if (data.value < 7)
+                        uvIndex.className = "text-warning";
+                    if (data.value < 3)
+                        uvIndex.className = "text-primary";
+                    else
+                        uvIndex.className = "text-danger";
+                });
+
+            // Add images icon coordinating to weather condition 
+            var imgEl = document.createElement("img");
+            imgEl.setAttribute("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+
+            cardHeader.appendChild(imgEl);
+            card.appendChild(cardHeader);
+            card.appendChild(temperature);
+            card.appendChild(humidity);
+            card.appendChild(wind);
+            card.appendChild(uvIndex);
+            cardContainer.appendChild(card);
+            todayEl.appendChild(cardContainer);
+        });
+}
+    
+// 5-Day Forecast 
