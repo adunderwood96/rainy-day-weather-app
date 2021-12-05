@@ -47,13 +47,14 @@ aside {
     opacity: 50%;
 }
 
-#current-header {
+#current-day {
   background-color: #f8cdda;
+  opacity: 75%;
   border-radius: 15px;
   padding: 10px;
 }
 
-#forecast-header {
+#Forecast-div {
   background-color: #f8cdda;
   opacity: 75%;
   border-radius: 15px;
