@@ -2,19 +2,20 @@ var apiKey = "AIzaSyBm0Y6yauFGSkGDZ1sa2Lc054YJqMJ39Ig";
 
 // Search City/History 
 var searchHistory;
+// if user has any search history show from local storage
 if (JSON.parse(localStorage.getItem("history")) != null)
     searchHistory = JSON.parse(localStorage.getItem("history"));
 else
     searchHistory = [];
 
-var searchBtn = document.getElementById("searchBtn");
+var searchBtn = document.querySelector("searchBtn");
 searchBtn.addEventListener("click", handleSearchResults);
 
 searchList();
 
 function handleSearchResults() {
-    var search = document.getElementById("search").value;
-    if (document.getElementById("search").value !== "") {
+    var search = document.querySelector("search").value;
+    if (document.querySelector("search").value !== "") {
         // Get weather results on search and save city
         currentWeather(search);
         forecastSearch(search);
@@ -22,13 +23,15 @@ function handleSearchResults() {
         saveSearch(search);
         renderSearch();
         // input city
-        document.getElementById("search").value = "";
+        document.querySelector("search").value = "";
+
+        // add in alert for search box being blank
     }
 }
 
 // Get weather info for the current day forecast
 function currentWeather(search) {
-    var currentDay = document.getElementById("current-day");
+    var currentDay = document.querySelector("current-day");
     currentDay.className = "";
 
     var currentApi = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}&units=imperial`;
@@ -38,7 +41,7 @@ function currentWeather(search) {
             return response.json();
         })
         .then(function (data) {
-            var currentEl = document.getElementById("current");
+            var currentEl = document.querySelector("current");
             currentEl.textContent = "";
 
             // create a card to contain the weather info 

@@ -23,7 +23,7 @@
             <aside class="col-md-3 m-4">
                 <h3 class="my-1">Search for a City:</h3>
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="searchValue" placeholder="ex. Charlotte">
+                    <input type="text" class="form-control" id="searchValue" placeholder="City">
                     <button class="btn btn-primary" id="searchBtn">Search</button>
                 </div>
                 <!-- Show Past City Searches -->
@@ -33,12 +33,13 @@
                 </div>
             </aside>
 
-            <!-- Forecast Section current/5-day -->
-            <div class="col-md-8">
+            <!-- Forecast Section current day -->
+            <div class="col-md-7">
                 <h4 class="current m-4 p-3" id="current-day">Today's Forecast:</h4>
                 <div id="current"></div>
+                <!-- 5 Day Forecast -->
                 <h4 class="forecast m-4 p-3" id="forecast-div">5-Day Forecast:</h4>
-                <div class="row" id="forecast"></div>
+                <div class="future" id="forecast"></div>
             </div>
         </div>
     </main>
