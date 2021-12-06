@@ -17,7 +17,7 @@ function handleSearchResults() {
     var search = document.querySelector("search").value;
     if (document.querySelector("search").value !== "") {
         // Get weather results on search and save city
-        currentWeather(search);
+        weather(search);
         forecastSearch(search);
 
         saveSearch(search);
@@ -30,11 +30,20 @@ function handleSearchResults() {
 }
 
 // Get weather info for the current day forecast
-function currentWeather(search) {
+function weather(search) {
     var currentDay = document.querySelector("current-day");
+    var forecast = document.querySelector("forecast-div");
+
     currentDay.className = "";
+    forecast, className = "";
+
+    var forecast = document.getElementById("forecast");
+    forecast.innerHTML = "";
 
     var currentApi = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}&units=imperial`;
+
+    var forecastApi = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiKey}&units=imperial`;
+
 
     fetch(currentApi)
         .then(function (response) {
@@ -43,12 +52,13 @@ function currentWeather(search) {
         .then(function (data) {
             var currentEl = document.querySelector("current");
             currentEl.textContent = "";
+            fetch(api)
 
             // create a card to contain the weather info 
-            var cardHeader = document.createElement("h3");
-            cardHeader.className = "card-title";
+            var cardTitle = document.createElement("h3");
+            cardTitle.className = "card-title";
             // show date
-            cardHeader.textContent = data.name + ": " + moment().format("LL");
+            cardTitle.textContent = data.name + ": " + moment().format("LL");
 
             var cardContainer = document.createElement("div");
             cardContainer.className = "card";
@@ -92,8 +102,8 @@ function currentWeather(search) {
             var imgEl = document.createElement("img");
             imgEl.setAttribute("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
 
-            cardHeader.appendChild(imgEl);
-            card.appendChild(cardHeader);
+            cardTitle.appendChild(imgEl);
+            card.appendChild(cardTitle);
             card.appendChild(temperature);
             card.appendChild(humidity);
             card.appendChild(wind);
@@ -102,5 +112,31 @@ function currentWeather(search) {
             todayEl.appendChild(cardContainer);
         });
 }
-    
-// 5-Day Forecast 
+
+function saveSearch(search) {
+    if (!searchHistory.includes(search)) {
+        searchHistory.push(search);
+        localStorage.setItem("history", JSON.stringify(searchHistory));
+    }
+}
+
+function renderSearch() {
+    while (document.getElementById("history").firstChild) {
+        document.getElementById("history").removeChild(document.getElementById("history").firstChild);
+    }
+    searchList();
+}
+
+function searchList() {
+    searchHistory.forEach(function (search) {
+        var historyItem = document.createElement("li");
+        historyItem.className = "list-group-item";
+        historyItem.textContent = search;
+
+        historyItem.addEventListener("click", function (event) {
+            weatherSearch(event.target.textContent);
+            forecastSearch(event.target.textContent);
+        });
+        document.getElementById("history").appendChild(historyItem);
+    });
+}
