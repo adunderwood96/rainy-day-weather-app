@@ -10,6 +10,6 @@ A weather dashboard is useful since it can help someone plan for their everyday 
 
 The hardest part for the challenge for me was figuring out the api, at first it was due to my apikey. I used one I got from google projects, but then realized I had to create it from OpenWeather itself. 
 
-### Site Preview:
+### Site Preview: ![Dashboard](https://github.com/adunderwood96/rainy-day-weather-app/blob/8c2ea10c902378d742777c0c544f82b48c22b351/assets/images/weather-dashboard.png)
 
-### Site Location: 
+### Site Location:  https://adunderwood96.github.io/rainy-day-weather-app/
