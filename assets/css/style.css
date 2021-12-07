@@ -1,14 +1,14 @@
 body {
-  font-family: "News Cycle", sans-serif;
-  background-color: #a7a6cb;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+  font-family: 'Oxygen', sans-serif;  
+  background-color: #f4c0b3;
 }
 
 header {
   background-image: linear-gradient(
-    to top,
-    #a7a6cb 0%,
-    #8989ba 52%,
-    #8989ba 100%
+    to bottom,
+    #afa7bb 40%,
+    #f4c0b3 100%
   );
 }
 
@@ -25,7 +25,6 @@ header {
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 0 20px #eee;
   border-radius: 5px;
   display: block;
   border: none;
@@ -38,7 +37,7 @@ header {
 }
 
 aside {
-  background-color: #f8cdda;
+  background-color: #afa7bb;
   border-radius: 15px;
   padding: 20px;
 }
@@ -48,26 +47,26 @@ aside {
 }
 
 #current-div {
-  background-color: #f8cdda;
+  background-color: #afa7bb;
   opacity: 75%;
   border-radius: 15px;
   padding: 10px;
-  margin: 25px;
 }
 
 #forecast-div {
-  background-color: #f8cdda;
+  background-color: #afa7bb;
   opacity: 75%;
   border-radius: 15px;
   padding: 10px;
-  margin: 25px;
 }
 
 .card {
-  background-color: #719cce;
+  background-color: #085467;
   margin-bottom: 10px;
   opacity: 75%;
   border-radius: 15px;
-  margin:20px;
+  margin: 20px;
+  color: white;
+  font-size: 1rem;
+  display: flex;
 }
-

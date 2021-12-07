@@ -16,7 +16,7 @@ function handleSearchClick() {
     var search = document.getElementById("search").value;
     if (document.getElementById("search").value !== "") {
 
-        weather(search);
+        currentWeather(search);
         forecastWeather(search);
 
         saveSearch(search);
@@ -30,12 +30,13 @@ function handleSearchClick() {
 // add keycode to use enterBtn for search
 
 // Get weather info for the current day forecast
-function weather(search) {
+function currentWeather(search) {
   var currentDay = document.getElementById("current-div");
   currentDay.className = "";
 
-  var currentApi = `https://api.https://openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}&units=imperial`;
-  fetch(currentApi)
+  var api = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}&units=imperial`;
+
+  fetch(api)
         .then(function (response) {
             return response.json();
         })
@@ -43,10 +44,9 @@ function weather(search) {
             var currentEl = document.getElementById("current");
             currentEl.textContent = "";
       // create a card to contain the weather info
-      var cardHeader = document.createElement("h3");
-      cardHeader.className = "card-title";
-      // show date
-      cardHeader.textContent = data.name + ": " + moment().format("LL");
+      var cardTitle = document.createElement("h3");
+      cardTitle.className = "card-title";
+      cardTitle.textContent = data.name + ": " + moment().format("LL");
 
       var cardContainer = document.createElement("div");
       cardContainer.className = "card";
@@ -67,7 +67,6 @@ function weather(search) {
       // wind
       var wind = document.createElement("p");
       wind.className = "card-text";
-      wind.textContent = "Wind Speed: " + data.main.wind.speed + "MPH";
 
       // UV Index (show diff color depending on UV condition)
       var uvIndex = document.createElement("p");
@@ -91,8 +90,8 @@ function weather(search) {
 var imgEl = document.createElement("img");
 imgEl.setAttribute("src", `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
 
-cardHeader.appendChild(imgEl);
-card.appendChild(cardHeader);
+cardTitle.appendChild(imgEl);
+card.appendChild(cardTitle);
 card.appendChild(temperature);
 card.appendChild(humidity);
 card.appendChild(wind);
@@ -110,7 +109,7 @@ function forecastWeather(search) {
   var forecast = document.getElementById("forecast");
   forecast.innerHTML = "";
 
-  var api = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiKey}& units=imperial`;
+  var api = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiKey}&units=imperial`;
 
     fetch(api)
       .then(function (response) {
@@ -125,27 +124,25 @@ function forecastWeather(search) {
             var cards = document.createElement("div");
 
             var cardContainer = document.createElement("div");
-            cardContainer.className = "card text-white";
+            cardContainer.className = "card";
 
             var card = document.createElement("div");
             card.className = "card-body p-2";
 
             // Show date
-            var cardHeader = document.createElement("h3");
-            cardHeader.className = "card-title";
-            cardHeader.textContent = moment(data.list[i].dt_txt.split("12:")[0]).format("LL");
+            var cardTitle = document.createElement("h3");
+            cardTitle.className = "card-title";
+            cardTitle.textContent = moment(data.list[i].dt_txt.split("12:")[0]).format("LL");
 
             //   temp
             var temperature = document.createElement("p");
             temperature.className = "card-text";
-            temperature.textContent =
-              "Temperature : " + data.list[i].main.temp_max + "°F";
+            temperature.textContent = "Temperature: " + data.list[i].main.temp + "°F";
 
             // humidity
             var humidity = document.createElement("p");
             humidity.className = "card-text";
-            humidity.textContent =
-              "Humidity : " + data.list[i].main.humidity + "%";
+            humidity.textContent = "Humidity : " + data.list[i].main.humidity + "%";
 
             // wind
             var wind = document.createElement("p");
@@ -156,7 +153,7 @@ function forecastWeather(search) {
             var icon = document.createElement("img");
             icon.setAttribute("src", `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
 
-            card.appendChild(cardHeader);
+            card.appendChild(cardTitle);
             card.appendChild(icon);
             card.appendChild(temperature);
             card.appendChild(humidity);
@@ -190,7 +187,7 @@ function searchList() {
     historyItem.textContent = search;
 
     historyItem.addEventListener("click", function (event) {
-      weather(event.target.textContent);
+      currentWeather(event.target.textContent);
       forecastWeather(event.target.textContent);
     });
     document.getElementById("history").appendChild(historyItem);
