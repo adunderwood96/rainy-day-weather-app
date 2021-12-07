@@ -2,6 +2,7 @@ body {
   font-family: 'Baloo Bhaijaan 2', cursive;
   font-family: 'Oxygen', sans-serif;  
   background-color: #f4c0b3;
+  color: white;
 }
 
 header {
@@ -24,14 +25,13 @@ header {
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
   border-radius: 5px;
   display: block;
   border: none;
 }
 
 .btn:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center; 
   color: #fff;
   text-decoration: none;
 }
@@ -40,6 +40,10 @@ aside {
   background-color: #afa7bb;
   border-radius: 15px;
   padding: 20px;
+}
+
+input[type=text]:focus {
+  background-color: #f4c0b3;
 }
 
 .search-history {
@@ -66,7 +70,6 @@ aside {
   opacity: 75%;
   border-radius: 15px;
   margin: 20px;
-  color: white;
   font-size: 1rem;
   display: flex;
 }

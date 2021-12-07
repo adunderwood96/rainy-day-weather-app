@@ -1,3 +1,4 @@
+// Eventually will change JS to using jquery (ajax) to practice getting used to using databases 
 var apiKey = "1d8373edb1af987a6228e4ce8edb1d53";
 
 // Search button and show past history on user load
@@ -26,9 +27,8 @@ function handleSearchClick() {
     }
 }
     // add in alert for search box being blank
-
-// add keycode to use enterBtn for search
-
+    // add enter key event 
+  
 // Get weather info for the current day forecast
 function currentWeather(search) {
   var currentDay = document.getElementById("current-div");
