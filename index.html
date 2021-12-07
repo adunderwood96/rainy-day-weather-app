@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header text-center text-white  p-3">
+    <header class="header text-center text-white p-3">
         <h1>Just Another Rainy Day: Weather Dashboard 🌦️</h1>
     </header>
 
@@ -28,18 +28,18 @@
                 </div>
                 <!-- Show Past City Searches -->
                 <h5> Search History:</h5>
-                <div class="history">
+                <div class="search-history">
                     <ul class="list-group history" id="history"></ul>
                 </div>
             </aside>
 
             <!-- Forecast Section current day -->
-            <div class="col-md-7">
-                <h4 class="current" id="current-day">Today's Forecast:</h4>
+            <div class="col-md-8">
+                <h4 class="current" id="current-div">Today's Forecast:</h4>
                 <div id="current"></div>
                 <!-- 5 Day Forecast -->
                 <h4 class="forecast" id="forecast-div">5-Day Forecast:</h4>
-                <div class="future row" id="forecast"></div>
+                <div class="row row-cols-6" id="forecast"></div>
             </div>
         </div>
     </main>
@@ -47,9 +47,6 @@
 
     <!-- Javascript -->
     <script src="assets\js\script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-</body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
 </html>

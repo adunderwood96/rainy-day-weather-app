@@ -47,7 +47,7 @@ aside {
     opacity: 50%;
 }
 
-#current-day {
+#current-div {
   background-color: #f8cdda;
   opacity: 75%;
   border-radius: 15px;
@@ -68,9 +68,6 @@ aside {
   margin-bottom: 10px;
   opacity: 75%;
   border-radius: 15px;
+  margin:20px;
 }
 
-#forecast {
-    width: 15rem;
-    text-align: center;
-}
