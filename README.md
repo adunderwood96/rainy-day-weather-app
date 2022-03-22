@@ -12,4 +12,4 @@ The hardest part for the challenge for me was figuring out the api, at first it 
 
 ### Site Preview: ![Dashboard](https://github.com/adunderwood96/rainy-day-weather-app/blob/8c2ea10c902378d742777c0c544f82b48c22b351/assets/images/weather-dashboard.png)
 
-### Site Location:  https://adunderwood96.github.io/rainy-day-weather-app/
+### Site Location:  https://apark8496.github.io/rainy-day-weather-app/
