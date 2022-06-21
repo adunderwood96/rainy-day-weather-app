@@ -8,7 +8,9 @@ The OpenWeather API has several different types of API to pick from that can tak
 
 A weather dashboard is useful since it can help someone plan for their everyday life or a trip and be prepared for the weather.
 
-The hardest part for the challenge for me was figuring out the api, at first it was due to my apikey. I used one I got from google projects, but then realized I had to create it from OpenWeather itself. 
+## Technologies:
+
+HTML, CSS, JavaScript, OpenWeather API 
 
 ### Site Preview: ![Dashboard](https://github.com/adunderwood96/rainy-day-weather-app/blob/8c2ea10c902378d742777c0c544f82b48c22b351/assets/images/weather-dashboard.png)
 
